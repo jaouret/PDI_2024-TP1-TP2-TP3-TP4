@@ -10,7 +10,7 @@ Describir el modelo C-S aplicado a un servidor con Concurrencia Real. Escribir u
 
 Cómo se cierra una conexión C-S ?. Métodos que eviten la pérdida de informacion.
 
-Probar el chat entre cliente y servidor. Cambiar tipó de socket y volver a probar.
+Probar el chat entre cliente y servidor. Cambiar tipo de socket y volver a probar.
 
 Presentar las respuestas en archivos ,pdf identificando alumno y grupo.
 
