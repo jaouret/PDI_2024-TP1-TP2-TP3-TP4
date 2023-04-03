@@ -1,4 +1,4 @@
-# PDI_2023 - TP 1
+# PDI_2023 - TP 1 - A
 Protocolos de Internet - 2023
 Explicar qué es un socket y los diferentes tipos de sockets.
 
@@ -25,3 +25,26 @@ Brian "Beej Jorgensen" Hall. Beej's Guide to Network Programming: Using Internet
 Douglas E. Comer, David L. Stevens. Internetworking With Tcp/Ip: Client-Server Programming and Applications. Prentice Hall. 2011.
 
 
+# PDI_2023 - TP 1 - B
+
+El concepto básico de sockets a bajo nivel es enviar un solo paquete por vez con todos los encabezados de los protocolos
+completados dentro del programa en lugar de usar el kernel.
+
+Unix provee dos tipo de sockets para el acceso directo a la red:
+
+SOCK_PACKET, recibe y envía datos al dispositivo ubicado en la capa de enlace. Esto significa que el "header" de la placa de red
+incluido en los datos puede ser escrito o leído. En general es el header de Ethernet. Todos los encabezados de los 
+protocolos subsecuentes también deben ser incluidos en los datos.
+
+SOCK_RAW, es el que usaremos por ahora, que incluye los encabezados IP, protocolos y datos subsecuentes.
+
+Desde el momento que lo creamos se puede enviar cualquier tipo de paquetes IP por este socket.
+También se pueden recibir cualquier tipo de paquetes que lleguen al host, después que el socket fue creado, si se
+hace un "read()" desde él.
+Se puede observar que aunque el socket es una interfaz al header IP, es tambiés específico para una capa de transporte.
+Esto significa que para escuchar tráfico TCP, UDP, ICMP hay que crear 3 raw sockets por separado, usando
+IPPROTO_TCP, IPPROTO_UDP y IPPROTO_ICMP (números de protocolo son 0 ó 6 para tcp, 17 para udp y 1 para icmp).
+
+Con esta información es posible crear un simple "sniffer", que muestre todo el contenido de los paquetes TCP
+que se reciban. ( En este ejemplo se evitan los headers IP y TCP, y se imprime solamente el "payload" con encabezados IP y
+TCP contenidos en el paquete ).
