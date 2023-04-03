@@ -25,7 +25,7 @@ Brian "Beej Jorgensen" Hall. Beej's Guide to Network Programming: Using Internet
 Douglas E. Comer, David L. Stevens. Internetworking With Tcp/Ip: Client-Server Programming and Applications. Prentice Hall. 2011.
 
 
-# PDI_2023 - TP 1 - B
+# PDI_2023 - TP 1 - B - Raw Sockets
 
 El concepto básico de sockets a bajo nivel es enviar un solo paquete por vez con todos los encabezados de los protocolos
 completados dentro del programa en lugar de usar el kernel.
@@ -48,3 +48,7 @@ IPPROTO_TCP, IPPROTO_UDP y IPPROTO_ICMP (números de protocolo son 0 ó 6 para t
 Con esta información es posible crear un simple "sniffer", que muestre todo el contenido de los paquetes TCP
 que se reciban. ( En este ejemplo se evitan los headers IP y TCP, y se imprime solamente el "payload" con encabezados IP y
 TCP contenidos en el paquete ).
+
+> Utilizando el código raw.c como base escribir un "sniffer" que es un programa que muestra el contenido del tráfico que llega.
+> Enviar tráfico al "sniffer" desde el cliente escrito en la parte A del TP1
+> Mostrar resultados.
