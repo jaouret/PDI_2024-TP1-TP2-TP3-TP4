@@ -49,6 +49,6 @@ Con esta información es posible crear un simple "sniffer", que muestre todo el 
 que se reciban. ( En este ejemplo se evitan los headers IP y TCP, y se imprime solamente el "payload" con encabezados IP y
 TCP contenidos en el paquete ).
 
-> Utilizando el código raw.c como base escribir un "sniffer" que es un programa que muestra el contenido del tráfico que llega.
-> Enviar tráfico al "sniffer" desde el cliente escrito en la parte A del TP1
-> Mostrar resultados.
+* Utilizando el código raw.c como base escribir un "sniffer" que es un programa que muestra el contenido del tráfico que llega.
+* Enviar tráfico al "sniffer" desde el cliente escrito en la parte A del TP1
+* Mostrar resultados.
