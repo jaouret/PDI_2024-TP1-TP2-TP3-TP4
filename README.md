@@ -51,4 +51,5 @@ TCP contenidos en el paquete ).
 
 * Utilizando el código raw.c como base escribir un "sniffer" que es un programa que muestra el contenido del tráfico que llega.
 * Enviar tráfico al "sniffer" desde el cliente escrito en la parte A del TP1
+* Enviar tráfico ICMP al "sniffer" y mostrar los resultados del LOG con comentarios.
 * Mostrar resultados.
