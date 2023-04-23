@@ -53,3 +53,24 @@ TCP contenidos en el paquete ).
 * Enviar tráfico al "sniffer" desde el cliente escrito en la parte A del TP1
 * Enviar tráfico ICMP al "sniffer" y mostrar los resultados del LOG con comentarios.
 * Mostrar resultados.
+
+PDI_2023 - TP 1 - C - Cliente Servidor utilizando Sockets en Python.
+
+Para realizar programas Cliente Servidor con Python utlizamos la librería o paquete socket.py (
+
+). Esta librería es una transcripción sencilla de la llamada al sistema sockets de BSD Unixal estilo orientado a objetos de Python:.
+La función socket() devuelve a socket object métodos que implementan las diversas llamadas al sistema de socket. Los tipos de parámetros tienen un nivel algo más alto que en la interfaz C, como con read() y write() en el uso de los archivos Python, la asignación del buffer es automática y la longitud del buffer está implícita en las operaciones de envío.
+
+Para detalles de la implementación de socket.py ver;
+
+Para la parte C del trabajo práctico usar como ejemplos de base los siguientes códigos (la explicación de la implementación está detallada dentro del mismo código)
+
+https://trello.com/1/cards/64184f125aa3494c371fb5f6/attachments/6445b7a56208701889f75156/download/image.png
+
+y escribir una aplicación cliente servidor que muestre las direcciones y puertos de todos los clientes conectados del lado del servidor y devuelva a cada cliente el día y hora de conexión, y el tiempo que estuvo (o está conectado).
+
+Realizar la misma aplicación tanto para C-S con Concurrencia Aparente (Select) como C-S Concurrente.
+
+De ser necesario agregar tiempo de espera, loop, sleep, con contadores para demorar los procesos.
+
+Implementar una limpieza de recuersos al salir del los programas (agregar opción de pregunta al usuario para cerrar los clientes).
