@@ -56,8 +56,7 @@ TCP contenidos en el paquete ).
 
 # PDI_2023 - TP 1 - C - Cliente Servidor utilizando Sockets en Python.
 
-Para realizar programas Cliente Servidor con Python utlizamos la librería o paquete socket.py (
-
+Para realizar programas Cliente Servidor con Python utlizamos la librería o paquete socket.py ( https://github.com/python/cpython/blob/3.10/Lib/socket.py )
 ). Esta librería es una transcripción sencilla de la llamada al sistema sockets de BSD Unixal estilo orientado a objetos de Python:.
 La función socket() devuelve a socket object métodos que implementan las diversas llamadas al sistema de socket. Los tipos de parámetros tienen un nivel algo más alto que en la interfaz C, como con read() y write() en el uso de los archivos Python, la asignación del buffer es automática y la longitud del buffer está implícita en las operaciones de envío.
 
