@@ -54,7 +54,7 @@ TCP contenidos en el paquete ).
 * Enviar tráfico ICMP al "sniffer" y mostrar los resultados del LOG con comentarios.
 * Mostrar resultados.
 
-PDI_2023 - TP 1 - C - Cliente Servidor utilizando Sockets en Python.
+# PDI_2023 - TP 1 - C - Cliente Servidor utilizando Sockets en Python.
 
 Para realizar programas Cliente Servidor con Python utlizamos la librería o paquete socket.py (
 
