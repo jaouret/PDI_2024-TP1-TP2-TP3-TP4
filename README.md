@@ -78,7 +78,7 @@ Para crear un socket (stream) en Python:
 socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None)
 
 Los parámetros son los mismos que se usan en C
-
+```
 import socket
 Creo socket IPv4
 sock_fd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -93,7 +93,7 @@ from socket import AF_INET, SOCK_STREAM
 SERVIDOR = 'a.b.c.d'  # IP 
 NROPUERTO = 41267          # puerto
 BUFFER = 80                 # tamaño del buffer
-"""
+
 DIRECCION_SERVIDOR = (SERVIDOR, NROPUERTO)
 CLIENTE = Socket(AF_INET, SOCK_STREAM)
 try:
@@ -104,6 +104,6 @@ try:
 except OSError:
     print('connection failed')
 CLIENT.close()
-"""
+```
 
 
