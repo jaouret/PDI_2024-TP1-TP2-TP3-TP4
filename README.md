@@ -80,12 +80,13 @@ socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None)
 Los parámetros son los mismos que se usan en C
 
 import socket
-# Creo socket IPv4
+Creo socket IPv4
 sock_fd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 if sock_fd == -1:
-# administro el error
 
-# Ejemplo de cliente sencillo
+Administro el error
+
+Ejemplo de cliente sencillo
 
 from socket import socket as Socket
 from socket import AF_INET, SOCK_STREAM
