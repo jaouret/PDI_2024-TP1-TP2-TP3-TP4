@@ -93,7 +93,7 @@ from socket import AF_INET, SOCK_STREAM
 SERVIDOR = 'a.b.c.d'  # IP 
 NROPUERTO = 41267          # puerto
 BUFFER = 80                 # tamaño del buffer
-
+"""
 DIRECCION_SERVIDOR = (SERVIDOR, NROPUERTO)
 CLIENTE = Socket(AF_INET, SOCK_STREAM)
 try:
@@ -104,6 +104,6 @@ try:
 except OSError:
     print('connection failed')
 CLIENT.close()
-
+"""
 
 
