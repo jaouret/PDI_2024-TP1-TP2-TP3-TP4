@@ -106,4 +106,48 @@ except OSError:
 CLIENT.close()
 ```
 
+PDI_2023 - TP 2 - A - SNMP
 
+Descargar de internet un gestor de SNMP
+
+Instalar un agente SNMP en Windows
+
+En Windows instalar SNMP y activarlo con PowerShell como administrador
+
+Get-WindowsCapability  -Online -Name SNMP*
+
+Get-WindowsCapability -name SNMP* -online | Add-WindowsCapability -Online
+
+Configuración básica:
+
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\services\SNMP\Parameters\RFC1156Agent" -Name "sysContact" -Value "Nombre" -type String
+
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\services\SNMP\Parameters\RFC1156Agent" -Name "sysLocation" -Value "UCA" -type String
+
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\ValidCommunities" -Name "COMUNIDAD_PDI" -Value 8 -type DWord
+
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\PermittedManagers" -Name "1" -Value "localhost" -type StringSet-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\PermittedManagers" -Name "2" -Value "192.168.1.78" -type String
+
+Restart-Service -Name SNMP
+
+Mofidcar la configuración del MIB Browser
+
+Si se instala en Linux
+
+sudo apt-get install snmpd.
+
+Seguramente requiera net-tools previamente instalado
+
+sudo nano /etc/snmp/snmpd.conf
+
+Configurar agentAddress para escuchar en IPv4 e IPv6: agentAddress udp:161,udp6:[::1]:161agentAddress udp:192.168.1.5:161
+
+rocommunity public
+
+sudo service snmpd restart
+
+sudo service snmpd status
+
+Ejecutar el MIB Browser sobre Windows o Linux.
+
+Describir lo que se observa en un informe.
