@@ -106,16 +106,14 @@ except OSError:
 CLIENT.close()
 ```
 
-PDI_2023 - TP 2 - A - SNMP
+# PDI_2023 - TP 2 - A - SNMP
 
 Descargar de internet un gestor de SNMP
-
 Instalar un agente SNMP en Windows
 
-En Windows instalar SNMP y activarlo con PowerShell como administrador
+* En Windows instalar SNMP y activarlo con PowerShell como administrador
 
 Get-WindowsCapability  -Online -Name SNMP*
-
 Get-WindowsCapability -name SNMP* -online | Add-WindowsCapability -Online
 
 Configuración básica:
@@ -132,7 +130,7 @@ Restart-Service -Name SNMP
 
 Mofidcar la configuración del MIB Browser
 
-Si se instala en Linux
+* Si se instala en Linux
 
 sudo apt-get install snmpd.
 
