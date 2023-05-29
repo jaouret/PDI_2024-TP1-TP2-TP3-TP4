@@ -154,5 +154,6 @@ Describir lo que se observa en un informe.
 https://trello.com/c/18DDc2Ll/2-parte-b-ingresar-a-la-tarjeta-para-leer-el-contenido
 
 # PDI_2023 - TP 3 - A - Algoritmo BFM y Dijkstra - Ruteo
+https://trello.com/b/FCCR892X/trabajo-pr%C3%A1ctico-3
 
 
