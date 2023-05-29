@@ -153,4 +153,6 @@ Describir lo que se observa en un informe.
 # PDI_2023 - TP 2 - B - RestAPI - Servidores sin control de estado
 https://trello.com/c/18DDc2Ll/2-parte-b-ingresar-a-la-tarjeta-para-leer-el-contenido
 
+# TP 3 - Parte A - Algoritmo BFM y Dijkstra - Ruteo
+
 
