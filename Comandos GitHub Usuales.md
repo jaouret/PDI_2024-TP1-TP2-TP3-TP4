@@ -1,4 +1,4 @@
-# Github en UbuntuLeave a Comment	/ Linux / By admin
+# Github en Ubuntu
 
 sudo apt-get install git
 
