@@ -1,5 +1,5 @@
-# PDI_2023 - TP 1 - A
-Protocolos de Internet - 2023
+# PDI - TP 1 - A
+Protocolos de Internet
 Explicar qué es un socket y los diferentes tipos de sockets.
 
 Cuáles son las estructuras necesarias para operar con sockets en el modelo C-S y cómo se hace para ingresar los datos requeridos. Explicar con un ejemplo.
@@ -25,7 +25,7 @@ Brian "Beej Jorgensen" Hall. Beej's Guide to Network Programming: Using Internet
 Douglas E. Comer, David L. Stevens. Internetworking With Tcp/Ip: Client-Server Programming and Applications. Prentice Hall. 2011.
 
 
-# PDI_2023 - TP 1 - B - Raw Sockets
+# PDI - TP 1 - B - Raw Sockets
 
 El concepto básico de sockets a bajo nivel es enviar un solo paquete por vez con todos los encabezados de los protocolos
 completados dentro del programa en lugar de usar el kernel.
@@ -54,7 +54,7 @@ TCP contenidos en el paquete ).
 * Enviar tráfico ICMP al "sniffer" y mostrar los resultados del LOG con comentarios.
 * Mostrar resultados.
 
-# PDI_2023 - TP 1 - C - Cliente Servidor utilizando Sockets en Python.
+# PDI - TP 1 - C - Cliente Servidor utilizando Sockets en Python.
 
 Para realizar programas Cliente Servidor con Python utlizamos la librería o paquete socket.py ( https://github.com/python/cpython/blob/3.10/Lib/socket.py )
 ). Esta librería es una transcripción sencilla de la llamada al sistema sockets de BSD Unixal estilo orientado a objetos de Python:.
@@ -106,7 +106,7 @@ except OSError:
 CLIENT.close()
 ```
 
-# PDI_2023 - TP 2 - A - SNMP
+# PDI - TP 2 - A - SNMP
 
 Descargar de internet un gestor de SNMP
 Instalar un agente SNMP en Windows
@@ -150,10 +150,10 @@ Ejecutar el MIB Browser sobre Windows o Linux.
 
 Describir lo que se observa en un informe.
 
-# PDI_2023 - TP 2 - B - RestAPI - Servidores sin control de estado
+# PDI - TP 2 - B - RestAPI - Servidores sin control de estado
 https://trello.com/c/18DDc2Ll/2-parte-b-ingresar-a-la-tarjeta-para-leer-el-contenido
 
-# PDI_2023 - TP 3 - A - Algoritmo BFM y Dijkstra - Ruteo
+# PDI - TP 3 - A - Algoritmo BFM y Dijkstra - Ruteo
 https://trello.com/c/CgJGp5Fz/1-parte-a-ingresar-a-la-tarjeta-para-leer-el-contenido
 https://trello.com/c/GmBZh9LJ/3-parte-b-ingresar-a-la-tarjeta-para-leer-el-contenido
 
