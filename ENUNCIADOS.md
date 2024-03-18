@@ -1,5 +1,5 @@
 # PDI - TP 1 - A
-Protocolos de Internet
+
 Explicar qué es un socket y los diferentes tipos de sockets.
 
 Cuáles son las estructuras necesarias para operar con sockets en el modelo C-S y cómo se hace para ingresar los datos requeridos. Explicar con un ejemplo.
