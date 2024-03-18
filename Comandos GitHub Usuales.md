@@ -2,7 +2,7 @@
 
 sudo apt-get install git
 
-.Configuración inicial de Github
+-Configuración inicial de Github
 
 Una vez que la instalación se ha completado con éxito, el siguiente paso es configurar los detalles de configuración del usuario GitHub.
 
