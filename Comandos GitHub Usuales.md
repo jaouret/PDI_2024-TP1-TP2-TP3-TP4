@@ -9,7 +9,7 @@ Una vez que la instalación se ha completado con éxito, el siguiente paso es co
 git config –global user.name “nombre_usuario”
 git config –global user.email “email_id”
 
-Creación de un repositorio local
+## Creación de un repositorio local
 
 Lo primero es crear una carpeta en tu computadora, que servirá como un repositorio local.
 
@@ -21,7 +21,7 @@ Initialized empty Git repository in /home/tu_usuario/ GitHubRepoTest/.git/
 
 cd GitHubRepoTest
 
-Creación de un archivo README para describir el repositorio
+## Creación de un archivo README para describir el repositorio
 
 El archivo README se utiliza generalmente para describir lo que el repositorio contiene o lo que el proyecto se trata. Para crear uno, basta ejecutar:
 
@@ -62,7 +62,7 @@ Una vez hecho esto se creará el repositorio y será posible subir el contenido 
 
 git remote add origin https://github.com/user_name/ GitHubRepoTest.git
 
-Pasos resumidos
+## Pasos resumidos
 
 git status
 
@@ -70,7 +70,7 @@ git checkout -b pruebas (para cambiar de branch a pruebas)
 
 git push origin pruebas (para relacionar branch local con el remoto pruebas)
 
-Para agregar archivos nuevos o cambios:
+## Para agregar archivos nuevos o cambios:
 
 git init
 git remote add origin https://github.com/directorioUsuarioGit/IoT01.git
