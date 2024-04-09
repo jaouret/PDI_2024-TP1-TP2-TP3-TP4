@@ -1,4 +1,4 @@
-# PDI - TP 1 - A (22/04/2024)
+# PDI - TP 1 - A (Entrega 22/04/2024)
 
 Explicar qué es un socket y los diferentes tipos de sockets.
 
