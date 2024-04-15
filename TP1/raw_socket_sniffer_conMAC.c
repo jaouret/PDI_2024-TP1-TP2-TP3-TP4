@@ -68,7 +68,7 @@ int main() {
         exit(EXIT_FAILURE);
     }
     
-    // Recibir paquetes en bucle
+    // Recibir paquetes 
     while (1) {
         int bytes_recibidos = recv(sockfd, buffer, sizeof(buffer), 0);
         if (bytes_recibidos < 0) {
