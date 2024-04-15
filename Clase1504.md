@@ -9,4 +9,6 @@ El proceso que debe realizar el servidor es el cálculo del factorial del nro qu
 3) Compilar y ejecutar los ejemplos con SOCKRAW. Modificar los ejemplos para hacer loopback como se muestra en el código con loopback.
 
 4) Con PYCHARM probar el ejemplo de cliente servidor en PYTHON.
+
+5) Realizar prueba de entrega de TP sobre GitHub.
    
