@@ -11,5 +11,5 @@ El proceso que debe realizar el servidor es el cálculo del factorial del nro qu
 4) Con PYCHARM probar el ejemplo de cliente servidor en PYTHON.
 
 5) Realizar prueba de entrega de TP sobre GitHub corretamente documentado. Formato del nombre del archivo:
-#TP1_apellido1_apellido2_..._apellidon.pdf 
+# TP1_apellido1_apellido2_..._apellidon.pdf 
    
