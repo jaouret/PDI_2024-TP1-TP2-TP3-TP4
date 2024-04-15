@@ -1,4 +1,4 @@
-# Clase del 22/04
+# Clase del 15/04
 Ejercicios Grupales
 
 1) Modificar el código del programa Cliente Servidor Concurrente para que el cliente genere bucles de mensajes con el siguiente proceso y que el servidor devuelva los tiempos de ejecución y PID de hijos y padres asociados al clente.
