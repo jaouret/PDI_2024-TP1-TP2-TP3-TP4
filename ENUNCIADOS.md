@@ -54,7 +54,7 @@ TCP contenidos en el paquete ).
 * Enviar tráfico ICMP al "sniffer" y mostrar los resultados del LOG con comentarios.
 * Mostrar resultados.
 
-# PDI - TP 1 - C - Cliente Servidor utilizando Sockets en Python.
+# PDI - TP 1 - C - Cliente Servidor utilizando Sockets en Python. (Entrega 13/05/2024)
 
 Para realizar programas Cliente Servidor con Python utlizamos la librería o paquete socket.py ( https://github.com/python/cpython/blob/3.10/Lib/socket.py )
 ). Esta librería es una transcripción sencilla de la llamada al sistema sockets de BSD Unixal estilo orientado a objetos de Python:.
@@ -104,7 +104,7 @@ except OSError:
 CLIENT.close()
 ```
 
-# PDI - TP 2 - A - SNMP
+# PDI - TP 2 - A - SNMP (Entrega 13/05/2024)
 
 Descargar de internet un gestor de SNMP
 Instalar un agente SNMP en Windows
