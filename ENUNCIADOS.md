@@ -64,8 +64,6 @@ Para detalles de la implementación de socket.py ver;
 
 Para la parte C del trabajo práctico usar como ejemplos de base los siguientes códigos (la explicación de la implementación está detallada dentro del mismo código)
 
-https://trello.com/1/cards/64184f125aa3494c371fb5f6/attachments/6445b7a56208701889f75156/download/image.png
-
 y escribir una aplicación cliente servidor que muestre las direcciones y puertos de todos los clientes conectados del lado del servidor y devuelva a cada cliente el día y hora de conexión, y el tiempo que estuvo (o está conectado).
 
 Realizar la misma aplicación tanto para C-S con Concurrencia Aparente (Select) como C-S Concurrente.
