@@ -1,0 +1,114 @@
+paul1213@Paul-PC:~/PdeI/sniffer$ sudo ./sniffer
+{*} Socket creado...
+****************************************************************
+Paquete recibido - Longitud: 98 bytes
+|*| Encabezado Ethernet
+    - Dirección MAC de origen: 00:15:5D:75:D1:D9
+    - Dirección MAC de destino: 00:15:5D:23:CD:88
+    - Tipo de protocolo: 0x0800
+|*| Encabezado IP
+    - Versión IP: 4
+    - Longitud del encabezado IP: 20 bytes
+    - Tipo de servicio: 0
+    - Longitud total: 84 bytes
+    - Identificación: 30316
+    - Fragmentación: Flags: 64, Offset: 0
+    - Tiempo de vida: 64
+    - Protocolo: 1
+    - Suma de control: 0xB77B
+    - Dirección IP de origen: 172.29.130.91
+    - Dirección IP de destino: 142.250.79.78
+|*| Encabezado ICMP
+    - Tipo: 8
+    - Code: 0
+    - Checksum: 32586
+|*| Datos:
+08 00 7F 4A 00 09 00 01 4D CA 32 66 00 00
+00 00 30 A8 09 00 00 00 00 00 10 11 12 13 14 15
+16 17 18 19 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25
+26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 34 35
+36 37
+****************************************************************
+Paquete recibido - Longitud: 98 bytes
+|*| Encabezado Ethernet
+    - Dirección MAC de origen: 00:15:5D:23:CD:88
+    - Dirección MAC de destino: 00:15:5D:75:D1:D9
+    - Tipo de protocolo: 0x0800
+|*| Encabezado IP
+    - Versión IP: 4
+    - Longitud del encabezado IP: 20 bytes
+    - Tipo de servicio: 0
+    - Longitud total: 84 bytes
+    - Identificación: 0
+    - Fragmentación: Flags: 0, Offset: 0
+    - Tiempo de vida: 115
+    - Protocolo: 1
+    - Suma de control: 0x3AE8
+    - Dirección IP de origen: 142.250.79.78
+    - Dirección IP de destino: 172.29.130.91
+|*| Encabezado ICMP
+    - Tipo: 0
+    - Code: 0
+    - Checksum: 34634
+|*| Datos:
+00 00 87 4A 00 09 00 01 4D CA 32 66 00 00
+00 00 30 A8 09 00 00 00 00 00 10 11 12 13 14 15
+16 17 18 19 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25
+26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 34 35
+36 37
+****************************************************************
+Paquete recibido - Longitud: 98 bytes
+|*| Encabezado Ethernet
+    - Dirección MAC de origen: 00:15:5D:75:D1:D9
+    - Dirección MAC de destino: 00:15:5D:23:CD:88
+    - Tipo de protocolo: 0x0800
+|*| Encabezado IP
+    - Versión IP: 4
+    - Longitud del encabezado IP: 20 bytes
+    - Tipo de servicio: 0
+    - Longitud total: 84 bytes
+    - Identificación: 30415
+    - Fragmentación: Flags: 64, Offset: 0
+    - Tiempo de vida: 64
+    - Protocolo: 1
+    - Suma de control: 0xB718
+    - Dirección IP de origen: 172.29.130.91
+    - Dirección IP de destino: 142.250.79.78
+|*| Encabezado ICMP
+    - Tipo: 8
+    - Code: 0
+    - Checksum: 1858
+|*| Datos:
+08 00 07 42 00 09 00 02 4E CA 32 66 00 00
+00 00 A7 AF 09 00 00 00 00 00 10 11 12 13 14 15
+16 17 18 19 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25
+26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 34 35
+36 37
+****************************************************************
+Paquete recibido - Longitud: 98 bytes
+|*| Encabezado Ethernet
+    - Dirección MAC de origen: 00:15:5D:23:CD:88
+    - Dirección MAC de destino: 00:15:5D:75:D1:D9
+    - Tipo de protocolo: 0x0800
+|*| Encabezado IP
+    - Versión IP: 4
+    - Longitud del encabezado IP: 20 bytes
+    - Tipo de servicio: 0
+    - Longitud total: 84 bytes
+    - Identificación: 0
+    - Fragmentación: Flags: 0, Offset: 0
+    - Tiempo de vida: 115
+    - Protocolo: 1
+    - Suma de control: 0x3AE8
+    - Dirección IP de origen: 142.250.79.78
+    - Dirección IP de destino: 172.29.130.91
+|*| Encabezado ICMP
+    - Tipo: 0
+    - Code: 0
+    - Checksum: 3906
+|*| Datos:
+00 00 0F 42 00 09 00 02 4E CA 32 66 00 00
+00 00 A7 AF 09 00 00 00 00 00 10 11 12 13 14 15
+16 17 18 19 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25
+26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 34 35
+36 37
