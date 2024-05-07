@@ -129,7 +129,17 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\
 
 Restart-Service -Name SNMP
 
-Mofidcar la configuración del MIB Browser
+Mofidicar la configuración del MIB Browser
+
+En address agregar "localhost"
+
+![image](https://github.com/jaouret/PDI_2024-TP1-TP2-TP3-TP4/assets/111520053/ad5e4c2c-04a2-4dc2-830c-57262cdfb967)
+
+
+En advanced en los campos read community y write community agregar COMUNIDAD_PDI. Y la version 2
+![image](https://github.com/jaouret/PDI_2024-TP1-TP2-TP3-TP4/assets/111520053/36b36bb8-9f46-438b-87fd-944f64ab80c7)
+
+
 
 * Si se instala en Linux
 
