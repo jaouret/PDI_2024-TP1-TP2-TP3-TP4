@@ -112,6 +112,7 @@ Instalar un agente SNMP en Windows
 * En Windows instalar SNMP y activarlo con PowerShell como administrador
 
 Get-WindowsCapability  -Online -Name SNMP*
+
 Get-WindowsCapability -name SNMP* -online | Add-WindowsCapability -Online
 
 Configuración básica:
@@ -122,7 +123,9 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\services\SNMP\Parameters\
 
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\ValidCommunities" -Name "COMUNIDAD_PDI" -Value 8 -type DWord
 
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\PermittedManagers" -Name "1" -Value "localhost" -type StringSet-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\PermittedManagers" -Name "2" -Value "192.168.1.78" -type String
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\PermittedManagers" -Name "1" -Value "localhost" -type String
+
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\PermittedManagers" -Name "2" -Value "192.168.1.78" -type String
 
 Restart-Service -Name SNMP
 
