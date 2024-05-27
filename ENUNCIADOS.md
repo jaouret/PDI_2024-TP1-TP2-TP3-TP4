@@ -162,18 +162,31 @@ Ejecutar el MIB Browser sobre Windows o Linux.
 Describir lo que se observa en un informe.
 
 # PDI - TP 3 - A - RestAPI - Servidores sin control de estado - Gestión de la Base de Datos (Entrega 3/06/2024)
-Instalar SQLite
-Instalar Heidi SQL en Windows
-Para Linux y Windows se puede usar DBeaver Community Edition
-También se puede instalar DB Browser for SQLite
+Instalar SQLite.
+
+Instalar Heidi SQL en Windows.
+
+Para Linux y Windows se puede usar DBeaver Community Edition.
+
+También se puede instalar DB Browser for SQLite.
+
 Desde una terminal crear la base de datos, si no existe SQLite la crea automáticamente.
+
 La idea es crear un repositorio de datos para recibir datos de sensores.
+
 Conectarse a la base de datos desde el gestor elegido.
+
 Crear una tabla para recibir los datos de los sensores.
+
 Verificar con el gestor o desde el SQLite desde una terminal que esté todo bien.
-Verificar que Python y pip esté instalado
+
+Verificar que Python y pip esté instalado.
+
 Acceder a la base de datos de Python para ingresar nuevos valores.
+
 Desde el programa en Python importo las dependencias.
+
 Adaptar el código en github de acuerdo al criterio de diseño elegido.
+
 
 
