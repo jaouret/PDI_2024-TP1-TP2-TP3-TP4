@@ -1,69 +1,64 @@
-import mysql.connector
 import time
 import random
-import sys
-from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
-from scp import SCPClient
+import sqlite3
+from flask import Flask, render_template, jsonify
 from datetime import datetime
 from funciones import geo_latlon
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
 
-app.app_context().push()
-
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
+def create_table():
+    conn = sqlite3.connect('db.sqlite')
+    cursor = conn.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS data (
+                        id INTEGER PRIMARY KEY,
+                        co2 REAL,
+                        temp REAL,
+                        hum REAL,
+                        fecha TEXT,
+                        lugar TEXT,
+                        altura REAL,
+                        presion REAL,
+                        presion_nm REAL,
+                        temp_ext REAL
+                    )''')
+    conn.commit()
+    conn.close()
 
 @app.route('/')
 def index():
-    users = User.query.all()
-    return render_template('basic_table.html', users=users)
+    conn = sqlite3.connect('db.sqlite')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM data')
+    records = cursor.fetchall()
+    conn.close()
+    return render_template('basic_table.html', records=records)
+
+@app.route('/data')
+def data():
+    conn = sqlite3.connect('db.sqlite')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM data')
+    records = cursor.fetchall()
+    conn.close()
+    return jsonify([{
+        'co2': record[1],
+        'temp': record[2],
+        'hum': record[3],
+        'fecha': record[4],
+        'lugar': record[5],
+        'altura': record[6],
+        'presion': record[7],
+        'presion_nm': record[8],
+        'temp_ext': record[9]
+    } for record in records])
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    create_table()
 
-class crear_dict(dict):
-    # __init__ function
-    def __init__(self):
-        super().__init__()
-    # Function to add key:value
-    def add(self, key, value):
-        self[key] = value
-
-def main():
-    print('Defino credenciales de la base de datos ...')
-    user = 'usuario'
-    password = 'password'
-    host = '127.0.0.1'
-    port = 3306
-    database = 'base_de_datos'
-
-    print("Conecto con la base de datos utilizando mysql.connector...")
-    cnx = mysql.connector.connect(user=user,
-                                  password=password,
-                                  host=host,
-                                  port=port,
-                                  database=database)
-    if cnx:
-        print("Conectado")
-    else:
-        print("No conectado")
-        return
-
-    cursor = cnx.cursor()
-    query = "SELECT * FROM your_table"  # Reemplaza 'your_table' con el nombre de tu tabla
-    cursor.execute(query)
-    records = cursor.fetchall()
     temp_ext, presion, humedad_ext, descripcion_clima = geo_latlon()
     print("Resultados= ", temp_ext, presion, humedad_ext, descripcion_clima)
 
-    # datos del lugar
     while True:
         try:
             lugar = input("Lugar de la captura de los datos: ")
@@ -95,18 +90,17 @@ def main():
             d = datetime.now()
             print("Fecha", d)
             timestampStr = d.strftime("%d-%b-%Y (%H:%M:%S.%f)")
-            cursor = cnx.cursor()
-            query = ("INSERT INTO data3 (co2, temp, hum, fecha, lugar, altura, presion, presion_nm, temp_ext) "
-                     "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)")
-            record = (CO2_medido, temp_sensor, humedad_relativa, timestampStr, lugar, altura, presion, presion_nm, temp_ext)
-            cursor.execute(query, record)
-            cnx.commit()
-            print(cursor.rowcount, "Registro insertado..., acumulados:", cont, "\n")
+
+            conn = sqlite3.connect('db.sqlite')
+            cursor = conn.cursor()
+            cursor.execute('''INSERT INTO data (co2, temp, hum, fecha, lugar, altura, presion, presion_nm, temp_ext)
+                              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                           (CO2_medido, temp_sensor, humedad_relativa, timestampStr, lugar, altura, presion, presion_nm, temp_ext))
+            conn.commit()
+            conn.close()
+
+            print("Registro insertado..., acumulados:", cont, "\n")
             time.sleep(delta_t_capturas)
             print("\nEsperando nuevo registro de datos ...\n")
 
-    cnx.close()
     print("Cierro conexión ...")
-
-if __name__ == '__main__':
-    main()
