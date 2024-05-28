@@ -2,7 +2,6 @@ import mysql.connector
 import time
 import random
 import sys
-import logging
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from scp import SCPClient
