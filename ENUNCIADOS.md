@@ -161,7 +161,7 @@ Ejecutar el MIB Browser sobre Windows o Linux.
 
 Describir lo que se observa en un informe.
 
-# PDI - TP 3 - A - RestAPI - Servidores sin control de estado - Gestión de la Base de Datos (Entrega 3/06/2024)
+# PDI - TP 3 - A - RestAPI - Servidores sin control de estado - Gestión de la Base de Datos (Entrega 10/06/2024)
 Instalar SQLite.
 
 Instalar Heidi SQL en Windows.
