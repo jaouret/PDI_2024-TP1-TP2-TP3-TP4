@@ -8,9 +8,9 @@ from funciones import geo_latlon
 app = Flask(__name__)
 
 def create_table():
-    conn = sqlite3.connect('db.sqlite')
+    conn = sqlite3.connect('db.datos_sensores')
     cursor = conn.cursor()
-    cursor.execute('''CREATE TABLE IF NOT EXISTS data (
+    cursor.execute('''CREATE TABLE IF NOT EXISTS lectura_sensores (
                         id INTEGER PRIMARY KEY,
                         co2 REAL,
                         temp REAL,
@@ -27,18 +27,18 @@ def create_table():
 
 @app.route('/')
 def index():
-    conn = sqlite3.connect('db.sqlite')
+    conn = sqlite3.connect('db.datos_sensores')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM data')
+    cursor.execute('SELECT * FROM lectura_sensores')
     records = cursor.fetchall()
     conn.close()
-    return render_template('basic_table.html', records=records)
+    return render_template('tabla_basica.html', records=records)
 
-@app.route('/data')
-def data():
-    conn = sqlite3.connect('db.sqlite')
+@app.route('/datos')
+def datos():
+    conn = sqlite3.connect('db.datos_sensores')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM data')
+    cursor.execute('SELECT * FROM lectura_sensores')
     records = cursor.fetchall()
     conn.close()
     return jsonify([{
@@ -91,9 +91,9 @@ if __name__ == '__main__':
             print("Fecha", d)
             timestampStr = d.strftime("%d-%b-%Y (%H:%M:%S.%f)")
 
-            conn = sqlite3.connect('db.sqlite')
+            conn = sqlite3.connect('db.datos_sensores')
             cursor = conn.cursor()
-            cursor.execute('''INSERT INTO data (co2, temp, hum, fecha, lugar, altura, presion, presion_nm, temp_ext)
+            cursor.execute('''INSERT INTO lectura_sensores (co2, temp, hum, fecha, lugar, altura, presion, presion_nm, temp_ext)
                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)''',
                            (CO2_medido, temp_sensor, humedad_relativa, timestampStr, lugar, altura, presion, presion_nm, temp_ext))
             conn.commit()
