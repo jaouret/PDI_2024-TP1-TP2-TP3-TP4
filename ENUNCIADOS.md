@@ -196,10 +196,15 @@ Notas:
 * * sensor_editar_tabla_r2 agrega nuevas rutas y mensajes.    
 
 @app.route('/api/prueba')
+
 @app.route('/')
+
 @app.route('/api/todos-los-datos')
+
 @app.route('/api/primer-registro')
+
 @app.route('/api/directorio-db')
+
 @app.route('/api/insertar-dato')
 
 Verificar y mejorar.
