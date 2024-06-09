@@ -188,5 +188,20 @@ Desde el programa en Python importo las dependencias.
 
 Adaptar el código en github de acuerdo al criterio de diseño elegido.
 
+Notas:
+* Hubo varias consultas referidas a que no se desplegaban correctamente los datos.
+* La idea de la versión r1 era que para el TP se adapte el código resolviendo las inconsistencias.
+* Ahora podán encontrar las versiones r2 con algunas modificaciones
+* * sensores_r1 genera una db llamada datos_sendores.db
+* * sensor_editar_tabla_r2 agrega nuevas rutas y mensajes.    
+
+@app.route('/api/prueba')
+@app.route('/')
+@app.route('/api/todos-los-datos')
+@app.route('/api/primer-registro')
+@app.route('/api/directorio-db')
+@app.route('/api/insertar-dato')
+
+Verificar y mejorar.
 
 
