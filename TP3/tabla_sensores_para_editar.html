@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Sensores de prueba</title>
@@ -12,7 +13,7 @@
     <div>
       <h1>Sensores de prueba</h1>
       <hr>
-<!--Table Container-->
+      <!-- Table Container -->
       <div id="table"></div>
     </div>
     <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
@@ -25,7 +26,7 @@
 
       const editableCellAttributes = (data, row, col) => {
           if (row) {
-            return {contentEditable: 'true', 'data-element- id': row.cells[0].data};
+            return {contentEditable: 'true', 'data-element-id': row.cells[0].data};
           }
           else {
             return {};
@@ -35,22 +36,22 @@
       new gridjs.Grid({
         columns: [
           { id: 'id', name: 'id' },
-          { id: 'co2', name: 'CO2', 'attributes': editableCellAttributes },
-          { id: 'co2_corregido', name: 'CO2 Norm ', 'attributes': editableCellAttributes },
-          { id: 'temp', name: 'Temp', 'attributes': editableCellAttributes },
-          { id: 'hum', name: 'Hum', 'attributes': editableCellAttributes },
-          { id: 'fecha', name: 'Fecha', 'attributes': editableCellAttributes },
-          { id: 'lugar', name: 'Lugar', 'attributes': editableCellAttributes },
-          { id: 'altura', name: 'Altura', 'attributes': editableCellAttributes },
-          { id: 'presion', name: 'Presion', 'attributes': editableCellAttributes },
-          { id: 'presion_nm', name: 'Presion nm', 'attributes': editableCellAttributes },
-          { id: 'temp_ext', name: 'Temp ext', 'attributes': editableCellAttributes },
-          { id: 'temp_ref', name: 'Temp ref', 'attributes': editableCellAttributes },
+          { id: 'co2', name: 'CO2', attributes: editableCellAttributes },
+          { id: 'co2_corregido', name: 'CO2 Norm ', attributes: editableCellAttributes },
+          { id: 'temp', name: 'Temp', attributes: editableCellAttributes },
+          { id: 'hum', name: 'Hum', attributes: editableCellAttributes },
+          { id: 'fecha', name: 'Fecha', attributes: editableCellAttributes },
+          { id: 'lugar', name: 'Lugar', attributes: editableCellAttributes },
+          { id: 'altura', name: 'Altura', attributes: editableCellAttributes },
+          { id: 'presion', name: 'Presion', attributes: editableCellAttributes },
+          { id: 'presion_nm', name: 'Presion nm', attributes: editableCellAttributes },
+          { id: 'temp_ext', name: 'Temp ext', attributes: editableCellAttributes },
+          { id: 'temp_ref', name: 'Temp ref', attributes: editableCellAttributes },
         ],
         server: {
-          url: '/api/data',
-          then: results => results.data,
-          total: results => results.total,
+          url: '/api/todos-los-datos',
+          then: data => data,
+          total: data => data.total,
         },
         search: {
           enabled: true,
