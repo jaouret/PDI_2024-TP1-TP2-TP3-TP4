@@ -213,4 +213,27 @@ Verificar y mejorar.
 
 Instalar MQTT en Windows o Linux.
 
+Usaremos Mosquitto con Broker MQTT
+
+* Instalar
+En Linux (Ubuntu)
+sudo apt-get install mosquitto mosquitto-clients -y
+
+* Configurar
+El archivo de configurar se encuentra en: /etc/mosquitto/mosquitto.conf
+
+Editarlo 
+
+Mosquitto como servidor escucha en el puerto 1883. Se puede cambiar en caso de ser necesario.
+
+* Arrancar y verificar el Servidor Mosquitto
+sudo systemctl start mosquitto
+sudo systemctl status mosquitto
+
+* Suscribirse a un tema o tópico
+mosquitto_pub -h localhost -t test/topic -m "Tema de prueba"
+
+
+
+
 
