@@ -209,7 +209,7 @@ Notas:
 
 Verificar y mejorar.
 
-# PDI - TP 4 -  - RestAPI - Servidores sin control de estado - IoT (Entrega 24/06/2024 o en Primera Fecha de Final de Julio)
+# PDI - TP 4 - A - RestAPI - Servidores sin control de estado - IoT (Entrega 24/06/2024 o en Primera Fecha de Final de Julio)
 
 Instalar MQTT en Windows o Linux.
 
@@ -287,3 +287,24 @@ net stop mosquitto
 * Abrir dos ventanas de terminal (símbolo del sistema).
 
 * Seguir los mismos pasos explicados para Linux.
+
+# PDI - TP 4 - B - IoT MQTT (Entrega 24/06/2024 o en Primera Fecha de Final de Julio)
+
+Una vez que tengan funcionando lo anterior deberán simular la publicación de datos de sensores tomando lo que está ingresado en la base datos.
+Por practicidad y seguridad se puede hacer una aplicación cliente servidor entre los sensores y una base de datos, para que luego un publicador mqtt tome los datos desde ahí.
+
+Luego un suscriptor toma los datos desde el publicador y los pasa a otra base datos local y propia del publicador para su análisis.
+
+Esto permite que varios suscritores usen los mismos datos.
+
+Realizar la modificación de las rutas RestAPI para mostrar los datos de los sensores suscriptos de esta forma.
+
+Como base pueden usar los siguientes scripts:
+
+* mqtt_pub_r1.py
+
+* mqtt_sub_r1.py
+
+En la clase, de ser posible tomaremos datos reales y serán cargado en la BD a las que debe conectarse el publicador.
+
+
