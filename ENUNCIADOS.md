@@ -254,5 +254,36 @@ Queda en modo escuchs de mensajes a que el broker envíe a esos temas o tópicos
 
 El cliente publicador se conecta al broker y publica mensajes en uno o varios temas tópicos.El broker recibe el mensaje y lo reenvía a todos los clientes suscritos a esos tópicos.
 
+* Para hacer todo lo anterior en Windows:
 
+* Descargar e instalar Mosquitto desde 
 
+](https://mosquitto.org/)
+
+* Ejecutar el instalador
+  
+Asegúrarse de seleccionar la opción para instalar el servicio Mosquitto para que se inicie automáticamente.
+
+* Configuración del Path
+
+Agregar la ruta de Mosquitto a las variables de entorno del sistema:
+
+C:\Program Files\mosquitto).
+
+* Ejecutar Mosquitto Broker
+
+Abrir una ventana de terminal (símbolo del sistema) como administrador y ejecutar:
+
+sh
+
+net start mosquitto
+
+Para detener el broker:
+
+sh
+
+net stop mosquitto
+
+* Abrir dos ventanas de terminal (símbolo del sistema).
+
+* Seguir los mismos pasos explicados para Linux.
