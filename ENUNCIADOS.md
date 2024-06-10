@@ -217,6 +217,7 @@ Usaremos Mosquitto con Broker MQTT
 
 * Instalar
 En Linux (Ubuntu)
+
 sudo apt-get install mosquitto mosquitto-clients -y
 
 * Configurar
@@ -229,6 +230,9 @@ Mosquitto como servidor escucha en el puerto 1883. Se puede cambiar en caso de s
 * Arrancar y verificar el Servidor Mosquitto
   
 sudo systemctl start mosquitto
+
+sudo systemctl enable mosquitto
+
 sudo systemctl status mosquitto
 
 * Suscribirse a un tema o tópico desde la terminal 1.
@@ -242,7 +246,13 @@ mosquitto_pub -h localhost -t sitio1/tempratura -m "Sitio1 Temp. = 22 C"
 
 mosquitto_pub -h localhost -t sitio1/tempratura -m "Sitio1 Temp. = 23 C"
 
+El broker (Mosquitto) escucha en el puerto 1883 para conexiones MQTT sin encriptación.
+Gestiona las suscripciones y publica mensajes a los clientes suscritos a los temas o tópicos específicos.
 
+El cliente suscriptor (sería un servidor en este caso) se conecta al broker y se suscribe a uno o varios temas o tópicos.
+Queda en modo escuchs de mensajes a que el broker envíe a esos temas o tópicos.
+
+El cliente publicador se conecta al broker y publica mensajes en uno o varios temas tópicos.El broker recibe el mensaje y lo reenvía a todos los clientes suscritos a esos tópicos.
 
 
 
