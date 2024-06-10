@@ -231,8 +231,9 @@ Mosquitto como servidor escucha en el puerto 1883. Se puede cambiar en caso de s
 sudo systemctl start mosquitto
 sudo systemctl status mosquitto
 
-* Suscribirse a un tema o tópico desde la terminal 1
-  
+* Suscribirse a un tema o tópico desde la terminal 1.
+* * El cliente se suscribe al tema tempratura en el sitio1 y queda a la espera de recibir mensajes publicados en ese tema.
+
 mosquitto_sub -h localhost -t sitio1/temperatura
 
 * Publicar datos desde la terminal 2
