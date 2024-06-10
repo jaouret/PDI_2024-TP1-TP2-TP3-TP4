@@ -17,6 +17,6 @@
 
 - Cierre de la conexión: La conexión WebSocket puede ser cerrada por cualquiera de las partes en cualquier momento.
 
-![alt tag](http://url/to/img.png)
+![alt tag](https://github.com/jaouret/PDI_2024-TP1-TP2-TP3-TP4/blob/main/protocols.png)
 
 Ver ejemplo con flask en el TP4
