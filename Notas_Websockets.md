@@ -19,4 +19,6 @@
 
 ![alt tag](https://github.com/jaouret/PDI_2024-TP1-TP2-TP3-TP4/blob/main/protocols.png)
 
+![alt tag](https://github.com/jaouret/PDI_2024-TP1-TP2-TP3-TP4/blob/main/websocket-graph.png)
+
 Ver ejemplo con flask en el TP4
