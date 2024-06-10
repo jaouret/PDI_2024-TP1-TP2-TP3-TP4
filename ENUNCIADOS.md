@@ -227,13 +227,16 @@ Editarlo
 Mosquitto como servidor escucha en el puerto 1883. Se puede cambiar en caso de ser necesario.
 
 * Arrancar y verificar el Servidor Mosquitto
+  
 sudo systemctl start mosquitto
 sudo systemctl status mosquitto
 
 * Suscribirse a un tema o tópico desde la terminal 1
+  
 mosquitto_sub -h localhost -t sitio1/temperatura
 
 * Publicar un dato desde la terminal 2
+  
 mosquitto_pub -h localhost -t sitio1/tempratura -m "Sitio1 Temp. = 22 C"
 
 
