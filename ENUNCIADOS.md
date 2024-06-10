@@ -235,9 +235,11 @@ sudo systemctl status mosquitto
   
 mosquitto_sub -h localhost -t sitio1/temperatura
 
-* Publicar un dato desde la terminal 2
+* Publicar datos desde la terminal 2
   
 mosquitto_pub -h localhost -t sitio1/tempratura -m "Sitio1 Temp. = 22 C"
+
+mosquitto_pub -h localhost -t sitio1/tempratura -m "Sitio1 Temp. = 23 C"
 
 
 
