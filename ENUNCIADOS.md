@@ -209,4 +209,8 @@ Notas:
 
 Verificar y mejorar.
 
+PDI - TP 4 -  - RestAPI - Servidores sin control de estado - IoT (Entrega 24/06/2024 o en Primera Fecha de Final de Julio)
+
+Instalar MQTT en Windows o Linux.
+
 
