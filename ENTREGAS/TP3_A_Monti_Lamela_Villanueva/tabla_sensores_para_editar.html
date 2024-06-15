@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sensores de prueba</title>
+    <link
+      href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Sans-Serif;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Sensores de prueba</h1>
+      <hr />
+      <button class="btn" onclick="location.href='/agregar-registro'">
+        Ir al Formulario
+      </button>
+      <!-- Table Container -->
+      <div id="table"></div>
+    </div>
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script>
+      const tableDiv = document.getElementById("table");
+
+      const updateUrl = (prev, query) => {
+        return (
+          prev +
+          (prev.indexOf("?") >= 0 ? "&" : "?") +
+          new URLSearchParams(query).toString()
+        );
+      };
+
+      const editableCellAttributes = (data, row, col) => {
+        if (row) {
+          return {
+            contentEditable: "true",
+            "data-element-id": row.cells[0].data,
+          };
+        } else {
+          return {};
+        }
+      };
+
+      new gridjs.Grid({
+        columns: [
+          { id: "id", name: "id" },
+          { id: "co2", name: "CO2", attributes: editableCellAttributes },
+          {
+            id: "co2_corregido",
+            name: "CO2 Norm ",
+            attributes: editableCellAttributes,
+          },
+          { id: "temp", name: "Temp", attributes: editableCellAttributes },
+          { id: "hum", name: "Hum", attributes: editableCellAttributes },
+          { id: "fecha", name: "Fecha", attributes: editableCellAttributes },
+          { id: "lugar", name: "Lugar", attributes: editableCellAttributes },
+          { id: "altura", name: "Altura", attributes: editableCellAttributes },
+          {
+            id: "presion",
+            name: "Presion",
+            attributes: editableCellAttributes,
+          },
+          {
+            id: "presion_nm",
+            name: "Presion nm",
+            attributes: editableCellAttributes,
+          },
+          {
+            id: "temp_ext",
+            name: "Temp ext",
+            attributes: editableCellAttributes,
+          },
+          {
+            id: "temp_ref",
+            name: "Temp ref",
+            attributes: editableCellAttributes,
+          },
+        ],
+        server: {
+          url: "/api/todos-los-datos",
+          then: (data) => data,
+          total: (data) => data.total,
+        },
+        search: {
+          enabled: true,
+          server: {
+            url: (prev, search) => {
+              return updateUrl(prev, { search });
+            },
+          },
+        },
+        sort: {
+          enabled: true,
+          multiColumn: true,
+          server: {
+            url: (prev, columns) => {
+              const columnIds = [
+                "id",
+                "co2",
+                "co2_corregido",
+                "temp",
+                "hum",
+                "fecha",
+                "lugar",
+                "altura",
+                "presion",
+                "presion_nm",
+                "temp_ext",
+                "temp_ref",
+              ];
+              const sort = columns.map(
+                (col) =>
+                  (col.direction === 1 ? "+" : "-") + columnIds[col.index]
+              );
+              return updateUrl(prev, { sort });
+            },
+          },
+        },
+        pagination: {
+          enabled: true,
+          server: {
+            url: (prev, page, limit) => {
+              return updateUrl(prev, { start: page * limit, length: limit });
+            },
+          },
+        },
+      }).render(tableDiv);
+
+      let savedValue;
+
+      tableDiv.addEventListener("focusin", (ev) => {
+        if (ev.target.tagName === "TD") {
+          savedValue = ev.target.textContent;
+        }
+      });
+
+      tableDiv.addEventListener("focusout", (ev) => {
+        if (ev.target.tagName === "TD") {
+          if (savedValue !== ev.target.textContent) {
+            fetch("/api/data", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                id: ev.target.dataset.elementId,
+                [ev.target.dataset.columnId]: ev.target.textContent,
+              }),
+            });
+          }
+          savedValue = undefined;
+        }
+      });
+
+      tableDiv.addEventListener("keydown", (ev) => {
+        if (ev.target.tagName === "TD") {
+          if (ev.key === "Escape") {
+            ev.target.textContent = savedValue;
+            ev.target.blur();
+          } else if (ev.key === "Enter") {
+            ev.preventDefault();
+            ev.target.blur();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
