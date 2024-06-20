@@ -242,9 +242,9 @@ mosquitto_sub -h localhost -t sitio1/temperatura
 
 * Publicar datos desde la terminal 2
   
-mosquitto_pub -h localhost -t sitio1/tempratura -m "Sitio1 Temp. = 22 C"
+mosquitto_pub -h localhost -t sitio1/temperatura -m "Sitio1 Temp. = 22 C"
 
-mosquitto_pub -h localhost -t sitio1/tempratura -m "Sitio1 Temp. = 23 C"
+mosquitto_pub -h localhost -t sitio1/temperatura -m "Sitio1 Temp. = 23 C"
 
 El broker (Mosquitto) escucha en el puerto 1883 para conexiones MQTT sin encriptación.
 Gestiona las suscripciones y publica mensajes a los clientes suscritos a los temas o tópicos específicos.
